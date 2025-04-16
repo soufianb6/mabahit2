@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+    
+    --primary: 217 89% 61%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 142 71% 45%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --accent: 45 92% 50%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 4 90% 58%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217 89% 61%;
+    
+    --radius: 0.5rem;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Noto Sans Arabic', sans-serif;
+  }
+}
+
+/* Custom font family */
+@layer base {
+  html {
+    font-family: 'Noto Sans Arabic', sans-serif;
+  }
+}
+
+/* RTL specific styles */
+@layer components {
+  .article-card:hover {
+    @apply shadow-md;
+  }
+  
+  .pagination-item.active {
+    @apply bg-primary text-white;
+  }
+}

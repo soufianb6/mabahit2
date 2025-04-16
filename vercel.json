@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "buildCommand": "chmod +x vercel-build.sh && ./vercel-build.sh",
+  "outputDirectory": "client/dist",
+  "installCommand": "npm install",
+  "builds": [
+    {
+      "src": "dist/vercel-server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "dist/vercel-server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/client/dist/$1"
+    }
+  ]
+}
